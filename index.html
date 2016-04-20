@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Superhero Hangman: The Game</title>
+</head>
+<body>
+
+<h1>Superhero Hangman</h1>
+
+<div id= "game">
+	<p>Become a Hangman Hero!</p>
+	</div>
+
+<p>Guess That Superhero!</p>
+ <div id="placeholder" style="font-size: 1.5em; font-family: monotype; color: black;">-------</div>
+
+ <input id = "guessinput" type= "text" size = "1" />
+ <button id = "button"> Type in a Letter to Guess</button>
+
+<ul id
+ <p id= "oneUp"></p>
+
+
+
+<script type="text/javascript">
+
+var wordsArray = ["batman","spiderman", "superman", "flash", "daredevil", "captainamerica", "ironman", "wonderwoman", "greenarrow", "doctorstrange", "antman", "hawkeye", "greenlantern", "blackwidow", "hulk", "cyborg", "aquaman", "wolverine", "deadpool", "punisher"];
+
+var availableLetters = "abcdefghijklmnopqrstuvwxyz"
+
+var word;
+
+var lives;
+
+var placeholder;
+
+var input;
+
+var output;
+
+var wordLength;
+
+var wordSubstring;
+
+var currentWord;
+
+var guessInput;
+
+var guessButton;
+
+var lettersGuessed;
+
+var lettersMatched;
+
+var userGuess;
+
+var oneUp;
+
+function newGame ()
+{
+
+placeholder = "";
+lives = 10;
+word = wordsArray[Math.floor(Math.random() * wordsArray.wordLength)];
+currentWord = 0;
+word = wordsArray[currentWord];
+wordLength = word.length;
+wordSubstring = currentWord.substring;
+console.log(word);
+	var myElement = document.getElementById("button").
+	innerHTML = "Type in a Letter to Guess";
+
+
+for (var count = 0; count < word.length; count++)
+{
+	placeholder = placeholder + "-";
+}
+
+document.getElementById("placeholder").innerHTML = placeholder;
+}
+
+function guessletter()
+{
+var correct = 0;
+
+var inputBox = document.getElementById("guessinput"); input = inputBox.value;
+
+console.log(word);
+
+for (var count = 0; count < wordLength; count++) {
+	if (input == word.substring(count, count + 1)){
+			correct++;
+		placeholder = placeholder.substring(0, count + 1, placeholder.length = 1);
+		document.getElementById("placeholder").innerHTML = placeholder;
+	}
+
+}
+
+if (correct == 0)
+{
+	lives--;
+}
+if (lives == 0)
+{
+	alert ("you lose");
+	newGame();
+	}
+}
+
+newGame();
+document.getElementById("button").onclick = guessletter;
+
+
+</script>
+
+</body>
+</html>
